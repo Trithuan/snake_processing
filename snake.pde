@@ -1,12 +1,18 @@
-PImage photo;
+PImage photoAlice;
+PImage photoBob;
 int nbCases = 20;
 int tailleCase =  50; 
+
 int posXAlice = 0;
 int posYAlice = 0;
 
+int posXBob = 0;
+int posYBob = 0;
+
 void setup () {
   fullScreen();  
-  photo = loadImage("alice.png");
+  photoAlice = loadImage("alice.png");
+  photoBob = loadImage("bob.png");
 }
 
 void draw() {
@@ -20,7 +26,8 @@ void draw() {
       rect(i,j,tailleCase,tailleCase);
     }
   }
-    image(photo, posXAlice, posYAlice,tailleCase,tailleCase);   
+  image(photoBob, posXBob, posYBob,tailleCase,tailleCase);   
+  image(photoAlice, posXAlice, posYAlice,tailleCase,tailleCase);   
 }
 void keyPressed() {
   if (key == CODED) {
@@ -33,6 +40,16 @@ void keyPressed() {
     } else if (keyCode == RIGHT) {
       posXAlice += tailleCase; 
     }
-}
-}
+    } else if (key == 'Z' || key == 'z') {
+      posYBob -= tailleCase;
+    } else if (key == 'S' || key == 's') {
+      posYBob += tailleCase;
+    } else if (key == 'Q' || key == 'q') {
+      posXBob -= tailleCase;
+    } else if (key == 'D' || key == 'd') {
+      posXBob += tailleCase; 
+    }
+    }
+
+
   
